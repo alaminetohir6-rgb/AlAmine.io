@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0d1030"><link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AL-Amine"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>AL-Amine.io — Technology for All</title>
+<meta name="description" content="Typing, CVs, letters, passport photos, presentations and more. Order on WhatsApp.">
+<style>
+:root{--bg:#f7f5fb;--fg:#14102a;--card:#fff;--mut:#5d5878;--navy:#0d1030;--pur:#6b3fc4;--lav:#cdbdf5;--gold:#c9a227;--bd:#e3def0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0d26;--fg:#f1edfb;--card:#15183a;--mut:#aaa5c8;--bd:#2a2e5c}}
+:root[data-theme=dark]{--bg:#0b0d26;--fg:#f1edfb;--card:#15183a;--mut:#aaa5c8;--bd:#2a2e5c}
+*{box-sizing:border-box}html{scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 Georgia,'Times New Roman',serif}
+h1,h2,h3,.sans,button,input,select,textarea,nav{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff}
+header .wrap{display:flex;align-items:center;gap:10px;height:58px}
+.brand{display:flex;align-items:center;gap:8px;font:700 19px system-ui;text-decoration:none;color:var(--lav);margin-right:auto}
+.brand b{color:var(--gold)}
+select,input,textarea{font-size:16px;padding:10px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--fg);width:100%}
+header select{width:auto;padding:6px;background:#1b1f4d;color:#fff;border-color:#3a3f80}
+.btn{display:inline-block;background:var(--pur);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:16px;cursor:pointer;text-decoration:none;min-height:44px}
+.btn.gold{background:var(--gold);color:#1a1400}.btn.ghost{background:transparent;color:var(--pur);border:1.5px solid var(--pur)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.promo{background:linear-gradient(90deg,var(--pur),var(--navy));color:#fff;text-align:center;padding:8px 12px;font:600 14px system-ui}
+.hero{background:radial-gradient(circle at 80% 0,#3b2a8a,var(--navy) 60%);color:#fff;padding:54px 0 46px;text-align:center}
+.hero h1{font-size:clamp(28px,6vw,46px);margin:.3em 0}
+.hero .gold{color:var(--gold);letter-spacing:.25em;font:600 13px system-ui}
+.hero p{max-width:620px;margin:0 auto 20px;color:#d9d3f2}
+.tag{color:var(--gold);font:600 14px system-ui;letter-spacing:.12em}
+section{padding:38px 0}h2{font-size:26px;margin:0 0 6px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;box-shadow:0 2px 10px #0001}
+.card .ic{font-size:28px}.card h3{margin:.3em 0}.card p{color:var(--mut);margin:.2em 0 .8em;font-size:15px}
+.price{font:14px system-ui;margin:.4em 0 .8em}.price s{color:var(--mut)}.off{background:#b3261e;color:#fff;border-radius:4px;padding:1px 6px;font-size:12px;font-weight:700}
+.tpls{display:flex;gap:10px;flex-wrap:wrap}
+.tpl{border:2px solid var(--bd);border-radius:12px;padding:8px;background:var(--card);width:calc(33.3% - 7px);min-width:104px;cursor:pointer;text-align:center;font:600 13px system-ui;color:var(--fg)}
+.tpl[aria-pressed=true]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.mini{height:96px;border-radius:6px;background:#fff;margin-bottom:6px;position:relative;overflow:hidden;border:1px solid #ddd}
+.doc{background:#fff;color:#222;font:13px Georgia,serif;padding:18px;border-radius:8px;min-height:300px;position:relative;overflow:hidden}
+.doc h4{margin:0;font:700 20px system-ui}.doc .ln{height:7px;background:#ddd;border-radius:4px;margin:8px 0}
+.s0::before,.s2::before{content:"";position:absolute;left:0;top:0;bottom:0;width:28%;background:var(--pur)}
+.s0 .ln{margin-left:32%}.s0 h4{margin-left:32%;color:var(--navy)}
+.s1{text-align:center}.s1 h4{font-family:Georgia,serif;border-bottom:2px solid #222;padding-bottom:6px}
+.s2::before{width:100%;height:34%;background:var(--gold);bottom:auto}.s2 h4{position:relative;color:#1a1400}.s2 .ln{margin-top:10px}
+.mini.s0 .ln,.mini.s1 .ln,.mini.s2 .ln{height:5px;margin:7px 6px}
+form{display:grid;gap:12px}label{font:600 14px system-ui;display:block;margin-bottom:4px}
+.note{font:13px system-ui;color:var(--mut)}
+.ba{display:flex;gap:10px}.ba>div{flex:1;text-align:center;font:600 13px system-ui}.pane{height:110px;border-radius:8px;padding:10px;text-align:left;background:#fff;color:#222;border:1px solid #ccc;margin-bottom:4px}.face{width:46px;height:62px;border-radius:50% 50% 45% 45%;background:#c48a5a;display:block}
+.sn{display:flex;gap:18px;overflow-x:auto;padding:0 18px 8px;font:600 14px system-ui;white-space:nowrap}.sn a{color:#d9d3f2;text-decoration:none;padding:8px 0}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:#1fc66b;color:#052b15;font:700 16px system-ui;padding:14px 18px;border-radius:30px;text-decoration:none;z-index:6;box-shadow:0 4px 14px #0006}
+.demo .pane{position:relative;overflow:hidden;transition:background .8s}.demo .cap{font:600 13px system-ui;color:var(--pur);margin:6px 0;min-height:20px}
+.pd{display:flex;align-items:flex-end;justify-content:center;background:#8d9aa0}.demo.s1 .pd{background:#fff}.demo.s2 .pd{outline:3px dashed var(--gold);outline-offset:-8px}.demo.s3 .pd::after{content:"PDF ✓";position:absolute;top:6px;right:6px;background:#1fc66b;color:#052b15;font:700 12px system-ui;padding:2px 6px;border-radius:4px}
+.hwB{position:absolute;inset:0;padding:10px;background:#fff;color:#222;font:14px Georgia,serif;opacity:0;transition:opacity .8s}.demo.s1 .hwB{opacity:1}
+.phone{border:3px solid var(--navy);border-radius:18px;padding:10px;background:#fff;color:#222;font:14px system-ui;max-width:230px;margin:6px auto}.phone div{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:5px 0}.phone b{display:block;text-align:center;background:#1fc66b;color:#052b15;border-radius:8px;padding:6px;margin-top:8px}.tg{margin:20px 0 8px}
+.fl{display:flex;align-items:stretch;gap:4px;margin:10px 0}.fl>span{align-self:center;color:var(--gold);font-weight:700}
+.fp{flex:1;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:8px 4px;text-align:center;font:600 12px system-ui;opacity:.35;transition:opacity .5s,transform .5s;min-height:104px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.fp .em{font-size:28px;font-style:normal}.fp.on{opacity:1;transform:scale(1.04);border-color:var(--gold)}.fp svg{width:52px;height:64px;border-radius:4px}
+.err{color:#b3261e;font:600 14px system-ui}
+dialog{border:0;border-radius:14px;max-width:460px;width:92%;padding:18px;background:var(--card);color:var(--fg)}
+dialog::backdrop{background:#000a}
+.faq details{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin:8px 0}summary{font:600 16px system-ui;cursor:pointer}
+footer{background:var(--navy);color:#cfc9ee;padding:26px 0;font:14px system-ui}footer a{color:var(--gold)}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .2s}.card:hover{transform:translateY(-3px)}}
+</style></head><body>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="AL-Amine.io">
+<svg width="34" height="34" viewBox="0 0 64 64" role="img" aria-label="AL monogram"><path d="M32 3 58 12v22c0 14-11 22-26 27C17 56 6 48 6 34V12z" fill="#1b1f4d" stroke="#c9a227" stroke-width="3"/><text x="32" y="40" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#c9a227">AL</text></svg>
+<span><b>AL</b>-Amine<span style="opacity:.75">.io</span></span></a>
+<select id="lang" aria-label="Language" style="max-width:150px"></select><button class="btn" id="inst" hidden style="padding:6px 10px;min-height:36px;font-size:14px">Install app</button>
+</div><nav class="sn" aria-label="Sections"><a href="#services">Services</a><a href="#templates">Templates</a><a href="#demos">See how it works</a><a href="#how">How it works</a><a href="#pay">Payments</a><a href="#why">Why us</a></nav></header>
+<div class="promo" id="promo"></div>
+<div class="note wrap" id="lnote" role="status"></div>
+<main id="top">
+<div class="hero"><div class="wrap">
+<svg width="84" height="84" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 58 12v22c0 14-11 22-26 27C17 56 6 48 6 34V12z" fill="#1b1f4d" stroke="#c9a227" stroke-width="2.5"/><text x="32" y="40" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#c9a227">AL</text></svg>
+<div class="gold">DIGITAL HELP · MADE SIMPLE</div>
+<h1 data-t="h1"></h1><p data-t="sub"></p>
+<a class="btn gold" href="https://wa.me/233240862667" target="_blank" rel="noopener">Start on WhatsApp ↗</a> <a class="btn ghost" style="color:#fff;border-color:#fff8" href="#services" data-t="cta"></a>
+<p class="sans" style="margin-top:16px;font-size:14px">✓ See a watermarked preview before you pay in full</p>
+<p class="sans" style="margin-top:16px;font-size:13px;color:var(--lav)">TECHNOLOGY FOR ALL. · Create • Edit • Deliver</p>
+</div></div>
+<section id="services"><div class="wrap"><h2 data-t="sv"></h2><p class="note" data-t="svn"></p><div class="grid" id="cards"></div></div></section>
+<section id="order" style="background:var(--card)"><div class="wrap" style="max-width:640px">
+<h2 data-t="od"></h2><p class="note" data-t="odn"></p>
+<form id="f" novalidate>
+<div><label for="svc" data-t="l_svc"></label><select id="svc"></select></div>
+<div id="tplbox" hidden><label data-t="l_tpl"></label><div class="tpls" id="tpls"></div></div>
+<div id="exbox" class="card" hidden></div>
+<div><label for="olang" data-t="l_lang"></label><input id="olang" autocomplete="off"></div>
+<div><label for="req" data-t="l_req"></label><textarea id="req" rows="4"></textarea></div>
+<div><label for="num" data-t="l_num"></label><select id="num"><option value="233240862667">+233 24 086 2667</option><option value="233533951312">+233 53 395 1312</option></select></div>
+<div class="err" id="err" role="alert"></div>
+<button class="btn gold" type="submit" data-t="send"></button>
+<p class="note" data-t="inq"></p>
+</form></div></section>
+<section id="templates" lang="en" style="background:var(--card)"><div class="wrap"><h2>Templates</h2><p class="note">Tap a template to preview it. Choose one and it goes straight into your order.</p>
+<div id="tgroups"></div>
+<h3 class="tg">Restaurant QR menus &amp; business websites — built for you</h3>
+<p class="note">You send your details and I build it. Sample layouts only; yours will use your own name, food, prices and pictures.</p>
+<div class="grid">
+<div class="card"><h3>🔳 QR menu</h3><div class="phone"><div><span>Jollof rice</span><span>GH₵ 00</span></div><div><span>Grilled tilapia</span><span>GH₵ 00</span></div><div><span>Shawarma</span><span>GH₵ 00</span></div><b>Order on WhatsApp</b></div></div>
+<div class="card"><h3>🌐 1-page website</h3><div class="phone" style="max-width:none"><strong>Your Business Name</strong><div style="display:block;color:#666">What you sell · Location</div><div style="gap:6px;border:0"><i class="mini" style="flex:1;height:50px;background:#ddd"></i><i class="mini" style="flex:1;height:50px;background:#ddd"></i><i class="mini" style="flex:1;height:50px;background:#ddd"></i></div><b>WhatsApp us</b></div></div>
+</div></div></section>
+<section id="demos" lang="en"><div class="wrap"><h2>See how it works</h2><p class="note">Tap a service to watch the steps, from what you send to what you get back.</p><div class="grid" id="flows"></div></div></section>
+<section id="how" lang="en"><div class="wrap"><h2>How it works</h2><div class="grid"><div class="card"><h3>1. Send</h3><p>Send your file or details on WhatsApp from any country.</p></div><div class="card"><h3>2. Preview</h3><p>I do the work and send a watermarked preview so you can see it first.</p></div><div class="card"><h3>3. Pay &amp; receive</h3><p>You pay, and I send the clean, sharp file on WhatsApp.</p></div></div>
+<p class="note" style="margin-top:14px"><b>Small jobs:</b> work first, you see the preview, then pay. <b>Larger jobs (CV, QR menu, website):</b> pay half to start, then the balance when you like the draft.</p></div></section>
+<section id="pay" lang="en" style="background:var(--card)"><div class="wrap"><h2>How to pay</h2><p class="note">MTN MoMo (Ghana) only. No bank or PayPal needed, and you can pay from any country.</p><div class="grid"><div class="card"><h3>In Ghana</h3><p>Send to MTN MoMo <b>0240862667</b> or <b>0533951312</b><br>Name: <b>Salamatu Mahamadou</b></p></div><div class="card"><h3>From abroad</h3><p>Use TapTap Send, WorldRemit, Remitly or LemFi. Choose “Send to Ghana → Mobile Money → MTN”, enter the same number and name, and send the amount in GHC (see the ≈ US$ price on each service). It usually arrives within minutes.</p></div></div></div></section>
+<section id="why" lang="en"><div class="wrap"><h2>Why choose us</h2><div class="grid"><div class="card"><h3>🤝 Trust first</h3><p>You see a watermarked preview before you pay in full.</p></div><div class="card"><h3>💰 Fair prices</h3><p>50% off the normal price.</p></div><div class="card"><h3>🔒 One price</h3><p>Same price always, even when there are many orders.</p></div><div class="card"><h3>⚡ Fast on WhatsApp</h3><p>No email, no delay. Delivery on WhatsApp.</p></div><div class="card"><h3>🌍 Worldwide</h3><p>Works with any language, from any country.</p></div></div></div></section>
+<section><div class="wrap"><h2 data-t="dl"></h2><p data-t="dlp"></p></div></section>
+<section class="faq"><div class="wrap"><h2>FAQ</h2><div id="faq"></div></div></section>
+</main>
+<footer><div class="wrap"><b style="color:var(--gold)">AL</b>-Amine.io — TECHNOLOGY FOR ALL.<br>WhatsApp: <a href="https://wa.me/233240862667">+233 24 086 2667</a> · <a href="https://wa.me/233533951312">+233 53 395 1312</a><br><span data-t="fo"></span><br><span lang="en">Install this site as an app: Android Chrome → menu → Install app. iPhone Safari → Share → Add to Home Screen.</span></div></footer>
+<a class="fab" href="https://wa.me/233240862667" target="_blank" rel="noopener">💬 Chat with us</a>
+<dialog id="dlg"><div id="dbody"></div><p style="text-align:right"><button class="btn ghost" id="dc" data-t="close"></button> <button class="btn" id="dpick" data-t="choose"></button></p></dialog>
+<script>
+// ===== CONFIG (edit here) =====
+var CFG={promoOn:true,discount:50,
+ // price: null = "ask for price". Set a number (original price) to show crossed-out + discounted price.
+ currency:"GHS"};
+var TPL={cv:["Modern Professional","Clean Classic","Creative Accent"],letter:["Job Application","Letter to an Office","Formal Request","Complaint","Resignation","Recommendation"],school:["Absence","Permission","Formal Request"],cover:["Classic","Modern","Bold"],ppt:["Corporate","Academic","Creative"]};
+var SV=[
+{id:"hw",ic:"📝",t:null,price:null},
+{id:"pp",ic:"🪪",t:null,price:null},
+{id:"cv",ic:"📄",t:"cv",price:null},
+{id:"jl",ic:"✉️",t:"letter",price:null},
+{id:"sl",ic:"🏫",t:"school",price:null},
+{id:"cl",ic:"📑",t:"cover",price:null},
+{id:"pt",ic:"📊",t:"ppt",price:null},
+{id:"sp",ic:"🎓",t:null,price:null},
+{id:"qr",ic:"🔳",t:null,price:null},
+{id:"ws",ic:"🌐",t:null,price:null}];
+var PR={hw:{o:10,n:5,u:"0.50",per:1},cv:{o:100,n:50,u:"4"},sp:{o:30,n:15,u:"1"},pp:{o:50,n:25,u:"2"},qr:{o:500,n:250,u:"20"},mu:{o:100,n:50,u:"4"},ws:{o:800,n:400,u:"30"}};
+(function(){var m={};SV.forEach(function(s){m[s.id]=s});m.mu={id:"mu",ic:"🔄",t:null,price:null};SV=["hw","cv","sp","pp","qr","mu","ws","jl","sl","pt"].map(function(i){var s=m[i];s.p=PR[i]||null;return s})})();
+var I18={
+en:{h1:"Affordable Help. Limitless Possibilities.",sub:"Typing, CVs, letters, passport photos, presentations and websites — done for you, anywhere in the world, in any language.",cta:"See services",sv:"Our services",svn:"Pick a service, choose a template, and send your order on WhatsApp.",
+promo:"Cheapest in Ghana — {d}% OFF selected services · We Work Worldwide — Any Language.",order:"Order",ask:"Ask for price",preview:"Preview",choose:"Choose This Template",close:"Close",
+od:"Place your order",odn:"This opens WhatsApp with your details filled in.",l_svc:"Service",l_tpl:"Template",l_lang:"Preferred language",l_req:"Your requirements",l_num:"Send to",send:"Continue on WhatsApp",
+inq:"Opening WhatsApp sends an inquiry. It is not a confirmed order until we reply and agree the details with you.",e_req:"Please describe what you need (at least 10 characters).",e_lang:"Please enter your preferred language.",e_tpl:"Please choose a template.",
+dl:"Delivery",dlp:"Work is done as quickly as possible. Final timing and price depend on the amount of work and the files you send.",fo:"Handwritten text may need manual verification. Passport photos are delivered as edited digital images, not printed.",
+msg:"Hello Al-Amine.io. I would like to order your {s}.{t} My preferred language is {l}. My requirements are: {r}. Please let me know the price, required information, and expected delivery time.",tp:" My selected template is {t}.",
+s:{hw:["Image / Handwriting to Word","Send a photo or scan; get an editable Word file."],pp:["Passport Photo Editing","Background, crop and size to your specification."],cv:["CV Creation & Design","Editable, professional CVs."],jl:["Job Application Letters","Tailored to the role and employer."],sl:["School Letters","Absence, permission and other formal letters."],cl:["CV Cover Letters","Matched to your CV and target job."],pt:["PowerPoint Presentations","For school, business and training."],sp:["School Portal Help","Guidance with school portal tasks."],qr:["QR Menus","Digital menus for restaurants and shops."],ws:["Small Websites","Simple, clean sites for your business."]},
+faq:[["Do you work outside Ghana?","Yes. We work worldwide and in any language."],["How do I pay?","We confirm the price on WhatsApp first. Payment options will be shared with you there."],["Can I get changes?","Tell us what to adjust and we will update your work."]]},
+fr:{h1:"Aide abordable. Possibilités illimitées.",sub:"Saisie, CV, lettres, photos d’identité, présentations et sites web — réalisés pour vous, partout dans le monde, dans n’importe quelle langue.",cta:"Voir les services",sv:"Nos services",svn:"Choisissez un service et un modèle, puis envoyez votre commande sur WhatsApp.",
+promo:"Le moins cher du Ghana — {d} % de RÉDUCTION sur certains services · Nous travaillons dans le monde entier — toutes langues.",order:"Commander",ask:"Demander le prix",preview:"Aperçu",choose:"Choisir ce modèle",close:"Fermer",
+od:"Passer commande",odn:"Cela ouvre WhatsApp avec vos informations déjà remplies.",l_svc:"Service",l_tpl:"Modèle",l_lang:"Langue souhaitée",l_req:"Vos besoins",l_num:"Envoyer à",send:"Continuer sur WhatsApp",
+inq:"L’ouverture de WhatsApp envoie une demande. Ce n’est une commande confirmée qu’après notre réponse et l’accord sur les détails.",e_req:"Décrivez votre besoin (au moins 10 caractères).",e_lang:"Indiquez votre langue souhaitée.",e_tpl:"Veuillez choisir un modèle.",
+dl:"Livraison",dlp:"Le travail est fait le plus vite possible. Le délai et le prix dépendent de la quantité de travail et des fichiers envoyés.",fo:"Un texte manuscrit peut nécessiter une vérification manuelle. Les photos d’identité sont livrées en image numérique, non imprimées.",
+msg:"Bonjour Al-Amine.io. Je souhaite commander votre service : {s}.{t} Ma langue préférée est : {l}. Mes besoins : {r}. Merci de m’indiquer le prix, les informations nécessaires et le délai prévu.",tp:" Mon modèle choisi est : {t}.",
+s:{hw:["Image / écriture manuscrite vers Word","Envoyez une photo ou un scan ; recevez un fichier Word modifiable."],pp:["Retouche de photo d’identité","Fond, recadrage et taille selon vos exigences."],cv:["Création et design de CV","CV professionnels modifiables."],jl:["Lettres de candidature","Adaptées au poste et à l’employeur."],sl:["Lettres scolaires","Absence, autorisation et autres lettres formelles."],cl:["Lettres de motivation","Adaptées à votre CV et au poste visé."],pt:["Présentations PowerPoint","Pour l’école, l’entreprise et la formation."],sp:["Aide portail scolaire","Aide pour les démarches sur le portail de l’école."],qr:["Menus QR","Menus numériques pour restaurants et boutiques."],ws:["Petits sites web","Sites simples et soignés pour votre activité."]},
+faq:[["Travaillez-vous hors du Ghana ?","Oui. Nous travaillons dans le monde entier et dans toutes les langues."],["Comment payer ?","Nous confirmons d’abord le prix sur WhatsApp. Les modes de paiement y seront indiqués."],["Puis-je demander des modifications ?","Dites-nous quoi ajuster et nous mettrons votre travail à jour."]]},
+es:{h1:"Ayuda asequible. Posibilidades ilimitadas.",sub:"Mecanografía, CV, cartas, fotos de pasaporte, presentaciones y sitios web — hechos para ti, en cualquier parte del mundo y en cualquier idioma.",cta:"Ver servicios",sv:"Nuestros servicios",svn:"Elige un servicio y una plantilla, y envía tu pedido por WhatsApp.",
+promo:"Lo más barato de Ghana — {d} % DE DESCUENTO en servicios seleccionados · Trabajamos en todo el mundo — cualquier idioma.",order:"Pedir",ask:"Consultar precio",preview:"Vista previa",choose:"Elegir esta plantilla",close:"Cerrar",
+od:"Haz tu pedido",odn:"Se abrirá WhatsApp con tus datos ya escritos.",l_svc:"Servicio",l_tpl:"Plantilla",l_lang:"Idioma preferido",l_req:"Tus requisitos",l_num:"Enviar a",send:"Continuar en WhatsApp",
+inq:"Abrir WhatsApp envía una consulta. No es un pedido confirmado hasta que respondamos y acordemos los detalles contigo.",e_req:"Describe lo que necesitas (mínimo 10 caracteres).",e_lang:"Indica tu idioma preferido.",e_tpl:"Elige una plantilla.",
+dl:"Entrega",dlp:"El trabajo se hace lo más rápido posible. El plazo y el precio dependen de la cantidad de trabajo y de los archivos que envíes.",fo:"El texto manuscrito puede requerir verificación manual. Las fotos de pasaporte se entregan como imagen digital, no impresas.",
+msg:"Hola Al-Amine.io. Quiero pedir su servicio de {s}.{t} Mi idioma preferido es {l}. Mis requisitos: {r}. Por favor indíquenme el precio, la información necesaria y el plazo estimado.",tp:" Mi plantilla elegida es {t}.",
+s:{hw:["Imagen / manuscrito a Word","Envía una foto o escaneo; recibe un archivo Word editable."],pp:["Edición de foto de pasaporte","Fondo, recorte y tamaño según tus especificaciones."],cv:["Creación y diseño de CV","CV profesionales y editables."],jl:["Cartas de solicitud de empleo","A medida del puesto y la empresa."],sl:["Cartas escolares","Ausencias, permisos y otras cartas formales."],cl:["Cartas de presentación","Adaptadas a tu CV y al puesto."],pt:["Presentaciones PowerPoint","Para escuela, negocios y formación."],sp:["Ayuda con portal escolar","Apoyo con trámites en el portal escolar."],qr:["Menús QR","Menús digitales para restaurantes y tiendas."],ws:["Sitios web pequeños","Sitios sencillos y limpios para tu negocio."]},
+faq:[["¿Trabajan fuera de Ghana?","Sí. Trabajamos en todo el mundo y en cualquier idioma."],["¿Cómo se paga?","Primero confirmamos el precio por WhatsApp. Allí te daremos las opciones de pago."],["¿Puedo pedir cambios?","Dinos qué ajustar y actualizaremos tu trabajo."]]}
+};
+I18.en.bf="Before";I18.en.af="After";I18.en.nt="This language is not translated yet, so the page shows English. Your order will still be written for you in {n}.";
+I18.fr.bf="Avant";I18.fr.af="Après";I18.fr.nt="Cette langue n’est pas encore traduite ; la page s’affiche en anglais. Votre commande sera quand même rédigée en {n}.";
+I18.es.bf="Antes";I18.es.af="Después";I18.es.nt="Este idioma aún no está traducido, así que la página se muestra en inglés. Tu pedido se hará igualmente en {n}.";
+I18.zh={h1:"实惠的帮助，无限的可能。",sub:"打字、简历、信函、护照照片、演示文稿和网站——为您代劳，服务全球，支持任何语言。",cta:"查看服务",sv:"我们的服务",svn:"选择服务和模板，然后通过 WhatsApp 发送订单。",promo:"加纳最便宜——部分服务 {d}% 折扣 · 服务全球——任何语言。",order:"下单",ask:"咨询价格",preview:"预览",choose:"选择此模板",close:"关闭",od:"提交订单",odn:"将打开 WhatsApp 并自动填好您的信息。",l_svc:"服务",l_tpl:"模板",l_lang:"首选语言",l_req:"您的要求",l_num:"发送至",send:"前往 WhatsApp",inq:"打开 WhatsApp 只是发送咨询。在我们回复并与您确认细节之前，这不是已确认的订单。",e_req:"请描述您的需求（至少 10 个字符）。",e_lang:"请填写首选语言。",e_tpl:"请选择模板。",dl:"交付",dlp:"我们会尽快完成。最终时间和价格取决于工作量和您提供的文件。",fo:"手写文字可能需要人工核对。护照照片以编辑后的电子图片交付，不提供打印。",msg:"您好 Al-Amine.io，我想订购：{s}。{t} 我的首选语言是：{l}。我的要求：{r}。请告知价格、所需资料和预计交付时间。",tp:" 我选择的模板是：{t}。",bf:"之前",af:"之后",nt:"",
+s:{hw:["图片/手写转 Word","发送照片或扫描件，获得可编辑的 Word 文件。"],pp:["护照照片编辑","按您的规格调整背景、裁剪和尺寸。"],cv:["简历制作与设计","专业、可编辑的简历。"],jl:["求职信","针对职位和雇主量身定制。"],sl:["学校信函","请假、许可及其他正式信函。"],cl:["简历求职信","根据您的简历和目标职位撰写。"],pt:["PowerPoint 演示文稿","适用于学校、商务和培训。"],sp:["学校门户协助","协助办理学校门户事务。"],qr:["二维码菜单","为餐厅和商店制作电子菜单。"],ws:["小型网站","为您的业务制作简洁网站。"]},
+faq:[["你们在加纳以外也服务吗？","是的，我们服务全球，支持任何语言。"],["如何付款？","我们先在 WhatsApp 上确认价格，并在那里告知付款方式。"],["可以修改吗？","告诉我们需要调整的地方，我们会更新。"]]};
+I18.en.s.hw=["Image / Handwriting to Word","Student special. Send a photo of handwritten notes or an assignment. It is typed neatly into Word, and small changes (name, school, class, date, course) cost the same. Ready to print or submit."];
+I18.en.s.cv=["CV Design + Cover Letter","A professional CV with your photo inside, plus a cover letter. You get PDF and Word files to send to employers."];
+I18.en.s.sp=["School Portal Help","Results checking and admission-letter PDF downloads from school portals, sent to you on WhatsApp."];
+I18.en.s.pp=["Digital Passport / DV Lottery Photo","DIGITAL ONLY — NO PRINTING. Take your photo against a plain white wall; the background is made pure white and cropped to Ghana passport 35×45 mm, DV Lottery 600×600 or visa size. You get JPEG + PDF to upload online."];
+I18.en.s.qr=["Restaurant QR Digital Menu","One link and a QR code for your tables. Customers scan to see your food, prices and a WhatsApp order button. No app needed."];
+I18.en.s.mu=["Monthly Menu Update","For existing QR menu customers. Send your new list and your link is updated fast. The old QR code still works."];
+I18.en.s.ws=["Simple 1-Page Business Website","For a shop, salon, school or church: your name, what you sell, location, WhatsApp button and pictures. Mobile friendly."];
+I18.en.faq[1]=["How do I pay?","By MTN MoMo — see “How to pay” above. You can pay from abroad with a transfer app."];
+var LS="af:Afrikaans,sq:Shqip,am:አማርኛ,ar:العربية,hy:Հայերեն,az:Azərbaycanca,eu:Euskara,be:Беларуская,bn:বাংলা,bs:Bosanski,bg:Български,my:မြန်မာ,ca:Català,ceb:Cebuano,ny:Chichewa,zh:中文,co:Corsu,hr:Hrvatski,cs:Čeština,da:Dansk,nl:Nederlands,en:English,eo:Esperanto,et:Eesti,fil:Filipino,fi:Suomi,fr:Français,fy:Frysk,gl:Galego,ka:ქართული,de:Deutsch,el:Ελληνικά,gu:ગુજરાતી,ht:Kreyòl ayisyen,ha:Hausa,haw:ʻŌlelo Hawaiʻi,he:עברית,hi:हिन्दी,hmn:Hmong,hu:Magyar,is:Íslenska,ig:Igbo,id:Bahasa Indonesia,ga:Gaeilge,it:Italiano,ja:日本語,jv:Basa Jawa,kn:ಕನ್ನಡ,kk:Қазақша,km:ខ្មែរ,rw:Kinyarwanda,ko:한국어,ku:Kurdî,ky:Кыргызча,lo:ລາວ,la:Latina,lv:Latviešu,lt:Lietuvių,lb:Lëtzebuergesch,mk:Македонски,mg:Malagasy,ms:Bahasa Melayu,ml:മലയാളം,mt:Malti,mi:Māori,mr:मराठी,mn:Монгол,ne:नेपाली,no:Norsk,nb:Norsk bokmål,or:ଓଡ଼ିଆ,ps:پښتو,fa:فارسی,pl:Polski,pt:Português,pa:ਪੰਜਾਬੀ,ro:Română,ru:Русский,sm:Gagana Samoa,gd:Gàidhlig,sr:Српски,st:Sesotho,sn:Shona,sd:سنڌي,si:සිංහල,sk:Slovenčina,sl:Slovenščina,so:Soomaali,es:Español,su:Basa Sunda,sw:Kiswahili,sv:Svenska,tg:Тоҷикӣ,ta:தமிழ்,tt:Татарча,te:తెలుగు,th:ไทย,tr:Türkçe,tk:Türkmençe,uk:Українська,ur:اردو,ug:ئۇيغۇرچە,uz:Oʻzbekcha,vi:Tiếng Việt,cy:Cymraeg,xh:isiXhosa,yi:ייִדיש,yo:Yorùbá,zu:isiZulu,tw:Twi,ee:Eʋegbe,ak:Akan,wo:Wolof,ln:Lingála,om:Oromoo,ti:ትግርኛ";
+var LN={},RTL=["ar","he","fa","ur","ps","sd","yi","ug"],CT=null;
+LS.split(",").forEach(function(p){var i=p.indexOf(":");LN[p.slice(0,i)]=p.slice(i+1)});
+(function(){var s=$("lang"),h='<option value="auto">🌍 Auto language</option>';for(var c in LN)h+='<option value="'+c+'">'+LN[c]+'</option>';s.innerHTML=h})();
+function getT(){var o=I18[L]||{},e=I18.en,T={};for(var k in e)T[k]=o[k]!=null?o[k]:e[k];T.s={};for(var k in e.s)T.s[k]=(o.s&&o.s[k])||e.s[k];return T}
+var AUTO=true,pk=null,L="en",sel=null,sv=null;
+function $(i){return document.getElementById(i)}
+function pickLang(){var s=null;try{s=localStorage.getItem("lang")}catch(e){}
+ if(s&&LN[s]){AUTO=false;return s}
+ var p=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"en"]);
+ for(var i=0;i<p.length;i++){var c=String(p[i]).split("-")[0].toLowerCase();if(LN[c])return c}return"en"}
+function fmt(s,o){return s.replace(/\{(\w+)\}/g,function(m,k){return o[k]!=null?o[k]:m})}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function render(){var T=getT();CT=T;document.documentElement.lang=L;document.documentElement.dir=RTL.indexOf(L)>=0?"rtl":"ltr";$("lang").value=AUTO?"auto":L;
+ if(!$("olang").dataset.u)$("olang").value=LN[L];
+ $("lnote").textContent=I18[L]?"":fmt(T.nt,{n:LN[L]});
+ document.querySelectorAll("[data-t]").forEach(function(e){var v=T[e.dataset.t];if(v!=null)e.textContent=v});
+ $("promo").hidden=!CFG.promoOn;$("promo").textContent=fmt(T.promo,{d:CFG.discount});
+ $("cards").innerHTML=SV.map(function(s){var n=T.s[s.id];
+  var q=s.p,pr=!q?T.ask:'<s>'+CFG.currency+' '+q.o+'</s> <span class="off">'+Math.round(100-q.n*100/q.o)+'% OFF</span> <b>'+CFG.currency+' '+q.n+'</b>'+(q.per?' <small>/ page</small>':'')+' <small>≈ US$'+q.u+'</small>';
+  return '<div class="card"><div class="ic" aria-hidden="true">'+s.ic+'</div><h3>'+esc(n[0])+'</h3><p>'+esc(n[1])+'</p><div class="price">'+pr+'</div><button class="btn" data-o="'+s.id+'">'+T.order+'</button></div>'}).join("");
+ var cur=$("svc").value||SV[0].id;
+ $("svc").innerHTML=SV.map(function(s){return '<option value="'+s.id+'">'+esc(T.s[s.id][0])+'</option>'}).join("");
+ $("svc").value=cur;setSvc(cur,true);
+ $("faq").innerHTML=T.faq.map(function(q){return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'}).join("")}
+function setSvc(id,keep){sv=SV.filter(function(s){return s.id===id})[0];$("svc").value=id;
+ var k=sv.t;if(!keep)sel=null;$("tplbox").hidden=!k;
+ var x=$("exbox");x.hidden=!!k;
+ if(!k){var T=CT,h='<p class="note" style="margin-top:0">'+esc(T.s[id][1])+'</p>',fl="display:flex;align-items:flex-end;justify-content:center;";
+  if(id==="hw")h+='<div class="ba"><div><div class="pane" style="font:italic 15px cursive;color:#335;background:#fffbe8">Dear Sir,<br>I wuld lik to ...</div>'+T.bf+'</div><div><div class="pane" style="font:14px Georgia,serif">Dear Sir,<br>I would like to ...</div>'+T.af+'</div></div>';
+  if(id==="pp")h+='<div class="ba"><div><div class="pane" style="'+fl+'background:#9aa"><i class="face"></i></div>'+T.bf+'</div><div><div class="pane" style="'+fl+'"><i class="face"></i></div>'+T.af+'</div></div>';
+  x.innerHTML=h}
+ if(k){if(TPL[k].indexOf(sel)<0)sel=null;
+  $("tpls").innerHTML=TPL[k].map(function(n,i){return '<button type="button" class="tpl" aria-pressed="'+(n===sel)+'" data-i="'+i+'"><div class="mini s'+i+'"><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>'+esc(n)+(n===sel?' ✓':'')+'</button>'}).join("")}else sel=null}
+var pv=null;
+function openPrev(i){var n=TPL[sv.t][i];pv=n;pk=null;
+ $("dbody").innerHTML='<div class="doc s'+(i%3)+'"><h4>'+esc(n)+'</h4><div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln"></div><div class="ln" style="width:60%"></div><div class="ln"></div><div class="ln" style="width:70%"></div></div>';
+ $("dlg").showModal()}
+$("cards").addEventListener("click",function(e){var b=e.target.closest("[data-o]");if(!b)return;setSvc(b.dataset.o);$("order").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});$("svc").focus()});
+$("svc").addEventListener("change",function(){setSvc(this.value)});
+$("tpls").addEventListener("click",function(e){var b=e.target.closest(".tpl");if(!b)return;var i=+b.dataset.i;
+ if(TPL[sv.t][i]===sel){openPrev(i)}else{sel=TPL[sv.t][i];setSvc(sv.id,true);openPrev(i)}});
+$("dpick").onclick=function(){if(pk){var id={letter:"jl",school:"sl",cv:"cv",ppt:"pt"}[pk];setSvc(id);sel=pv;setSvc(id,true);$("dlg").close();$("order").scrollIntoView()}else{sel=pv;setSvc(sv.id,true);$("dlg").close()}};
+$("dc").onclick=function(){$("dlg").close()};
+$("olang").addEventListener("input",function(){this.dataset.u=1});
+$("lang").addEventListener("change",function(){if(this.value==="auto"){try{localStorage.removeItem("lang")}catch(e){}AUTO=true;L=pickLang()}else{AUTO=false;L=this.value;try{localStorage.setItem("lang",L)}catch(e){}}render()});
+$("f").addEventListener("submit",function(e){e.preventDefault();var T=getT(),er="",ol=$("olang").value.trim(),rq=$("req").value.trim();
+ if(sv.t&&!sel)er=T.e_tpl;else if(!ol)er=T.e_lang;else if(rq.length<10)er=T.e_req;
+ $("err").textContent=er;if(er){(sv.t&&!sel?$("tpls").firstChild:!ol?$("olang"):$("req")).focus();return}
+ var m=fmt(T.msg,{s:T.s[sv.id][0],t:sel?fmt(T.tp,{t:sel}):"",l:ol,r:rq});
+ var E=I18.en;if(L!=="en")m+="\n\n(English) "+fmt(E.msg,{s:E.s[sv.id][0],t:sel?fmt(E.tp,{t:sel}):"",l:ol,r:rq});
+ window.open("https://wa.me/"+$("num").value+"?text="+encodeURIComponent(m),"_blank","noopener")});
+var GR=[["Office & job letters (typing)","letter"],["School letters","school"],["CV / Resume designs","cv"],["Presentations","ppt"]];
+$("tgroups").innerHTML=GR.map(function(g){return '<h3 class="tg">'+esc(g[0])+'</h3><div class="tpls">'+TPL[g[1]].map(function(n,i){return '<button type="button" class="tpl" data-k="'+g[1]+'" data-i="'+i+'"><div class="mini s'+(i%3)+'"><i class="ln"></i><i class="ln"></i><i class="ln"></i></div>'+esc(n)+'</button>'}).join("")+'</div>'}).join("");
+$("tgroups").addEventListener("click",function(e){var b=e.target.closest(".tpl");if(!b)return;var k=b.dataset.k,i=+b.dataset.i;pk=k;pv=TPL[k][i];
+ $("dbody").innerHTML='<div class="doc s'+(i%3)+'"><h4>'+esc(pv)+'</h4><div class="ln"></div><div class="ln" style="width:80%"></div><div class="ln"></div><div class="ln" style="width:60%"></div><div class="ln"></div></div>';$("dlg").showModal()});
+function play(el,st){var c=el.querySelector(".cap"),i=0,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;el.classList.remove("s1","s2","s3");c.textContent=st[0];var t=setInterval(function(){i++;if(i>=st.length){clearInterval(t);return}el.classList.add("s"+i);c.textContent=st[i]},rm?150:1300)}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-p]");if(!b)return;play(b.closest(".demo"),b.dataset.p==="1"?["1. Your photo","2. Background made pure white","3. Cropped to the right size","4. PDF + JPEG ready ✓"]:["1. Your photo of handwriting","2. Typed neatly into Word","3. Small edits done","4. Word file ready ✓"])});
+I18.en.h1="Good work. Fair prices. Zero stress.";I18.en.sub="From clean Word documents to business websites, get practical digital services at clear prices — delivered on WhatsApp.";
+I18.en.dlp="Simple jobs are usually done faster. Medium jobs can take a little longer, sometimes a day or more. Bigger jobs can take a few days. The time depends on the amount of work and the files you send, and replies may be slower during working hours. Thank you for your patience.";
+I18.fr.dlp="Les travaux simples sont généralement faits plus vite. Les travaux moyens peuvent prendre un peu plus de temps, parfois un jour ou plus. Les gros travaux peuvent prendre quelques jours. Le délai dépend de la quantité de travail et des fichiers envoyés, et les réponses peuvent être plus lentes pendant les heures de travail. Merci de votre patience.";
+I18.es.dlp="Los trabajos sencillos suelen hacerse más rápido. Los medianos pueden tardar un poco más, a veces un día o más. Los trabajos grandes pueden tardar unos días. El plazo depende de la cantidad de trabajo y de los archivos que envíes, y las respuestas pueden ser más lentas en horario laboral. Gracias por tu paciencia.";
+I18.zh.dlp="简单的工作通常完成得更快；中等工作可能需要多一点时间，有时一天或更久；大型工作可能需要几天。具体时间取决于工作量和您提供的文件，工作时间内回复可能较慢。感谢您的耐心。";
+function E(x,t){return '<i class="em">'+x+'</i>'+t}
+function por(bg,sh){return '<svg viewBox="0 0 52 64" role="img" aria-label="Sample portrait"><rect width="52" height="64" fill="'+bg+'"/>'+(sh?'<ellipse cx="40" cy="34" rx="12" ry="28" fill="#0003"/>':'')+'<path d="M6 64c0-14 9-20 20-20s20 6 20 20z" fill="#35507a"/><circle cx="26" cy="27" r="12" fill="#c48a5a"/><path d="M14 25c0-12 8-16 12-16s12 4 12 16c-4-6-8-8-12-8s-8 2-12 8z" fill="#2b1d14"/></svg>'}
+var FL=[
+["📝","Handwriting to Word",[E('📷','Photo of your handwriting'),E('⌨️','I type it into Word'),E('📄','Clean Word + PDF')],["1. You send a photo on WhatsApp","2. I type it neatly — small edits included","3. You get a clean file, ready to print or submit"]],
+["🪪","Passport photo",[por('#8d9aa0',1)+'Your phone photo',E('✂️','White background, crop, size'),por('#fff')+'JPEG + PDF'],["1. Take a photo against a plain white wall and send it","2. I make the background pure white and crop to the size you need","3. You get JPEG + PDF to upload. Digital only — no printing"]],
+["📄","CV + cover letter",[E('👤','Your details + photo'),E('🎨','CV and cover letter designed'),E('📄','PDF + Word')],["1. You send your details and a nice phone photo","2. I design your CV and cover letter","3. You get PDF and Word files to send to employers"]],
+["✉️","Letters (office, job, school)",[E('📝','Your details and who it is for'),E('🗂️','Typed in the template you chose'),E('📄','Word + PDF')],["1. You tell me what the letter is for","2. I type it in the template you chose","3. You get an editable Word file and a PDF"]],
+["📊","PowerPoint",[E('💡','Topic, slides, language'),E('🎨','I design the slides'),E('🎞️','Editable PowerPoint')],["1. You send the topic and what it is for","2. I design and write the slides","3. You get a PowerPoint you can edit"]],
+["🎓","School portal help",[E('🔢','Your details (sent privately)'),E('🔎','I check results / get the letter'),E('📥','PDF on WhatsApp')],["1. You tell me what you need from the portal","2. I check your results or download your letter","3. You get the clean PDF on WhatsApp"]],
+["🔳","Restaurant QR menu",[E('🍽️','Your food and prices'),E('🔳','I build the menu + QR'),E('📱','Customers scan and order')],["1. You send your food list and prices","2. I build your menu link and QR code","3. Customers scan at the table and order on WhatsApp"]],
+["🔄","Monthly menu update",[E('✏️','Your new price list'),E('🔄','I update your link'),E('✅','Same QR, new menu')],["1. You send the changes","2. I update your menu link","3. Your old QR code still works"]],
+["🌐","1-page website",[E('🏪','Business details + pictures'),E('🌐','I build your page'),E('📱','Live link + WhatsApp button')],["1. You send your name, what you sell, location and pictures","2. I build your one-page site","3. You get a link that works on any phone"]]];
+$("flows").innerHTML=FL.map(function(f,k){return '<div class="card demo" id="f'+k+'"><h3>'+f[0]+' '+f[1]+'</h3><div class="fl">'+f[2].map(function(p,j){return (j?'<span>→</span>':'')+'<div class="fp on">'+p+'</div>'}).join("")+'</div><div class="cap">'+f[3][2]+'</div><button class="btn ghost" data-f="'+k+'">▶ Tap to see how it works</button></div>'}).join("");
+document.addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(!b)return;var k=+b.dataset.f,c=$("f"+k),ps=c.querySelectorAll(".fp"),cap=c.querySelector(".cap"),i=0,rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+ for(var j=0;j<ps.length;j++)ps[j].classList.remove("on");
+ (function go(){ps[i].classList.add("on");cap.textContent=FL[k][3][i];i++;if(i<3)setTimeout(go,rm?200:1400)})()});
+I18.en.dlp="Simple jobs are usually done quicker. Medium jobs can take quite some time. Big or heavy jobs can take 1 or 2 days. These are estimates, not guaranteed deadlines. Work is done in the order it arrives, and replies may be slower during working hours, so please don’t send repeated messages — your order has not been forgotten. Thank you for your patience.";
+I18.fr.dlp="Les travaux simples sont généralement faits plus vite. Les travaux moyens peuvent prendre un certain temps. Les gros travaux peuvent prendre 1 ou 2 jours. Ce sont des estimations, pas des délais garantis. Le travail est fait dans l’ordre d’arrivée et les réponses peuvent être plus lentes pendant les heures de travail ; merci de ne pas envoyer de messages répétés — votre commande n’est pas oubliée. Merci de votre patience.";
+I18.es.dlp="Los trabajos sencillos suelen hacerse más rápido. Los trabajos medianos pueden tardar bastante. Los trabajos grandes o pesados pueden tardar 1 o 2 días. Son estimaciones, no plazos garantizados. El trabajo se hace por orden de llegada y las respuestas pueden ser más lentas en horario laboral; por favor no envíes mensajes repetidos: tu pedido no se ha olvidado. Gracias por tu paciencia.";
+I18.zh.dlp="简单的工作通常更快完成；中等工作可能需要相当一段时间；大型或繁重的工作可能需要 1 至 2 天。这些是预估，不是保证的期限。工作按收到顺序完成，工作时间内回复可能较慢，请不要重复发送消息——您的订单没有被遗忘。感谢您的耐心。";
+L=pickLang();render();
+</script><script>
+var dip=null;window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();dip=e;var b=document.getElementById("inst");b.hidden=false;b.onclick=function(){dip.prompt();b.hidden=true}});
+if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+</script>
+</body></html>
